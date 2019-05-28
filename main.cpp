@@ -22,8 +22,8 @@ nuskaitymas(x);
 if(x.size()==0){
 return 0;
 }
-/*else
+else
     {
     print2(x);
-    }*/
+    }
 }
