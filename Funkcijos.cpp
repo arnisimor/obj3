@@ -45,9 +45,9 @@ out.close();
 
 };
 
-bool compare_m(stud & a, stud & b) {
+bool compare_m(stud & a, stud & b)
+{
    return a.galb() > b.galb();
-
 };
 void nuskaitymas (vector <stud> &x)
 {
