@@ -8,18 +8,27 @@
 using std::vector;
 using std::string;
 
-class stud
+class zmogus
 {
-private:
+protected:
 string vardas_;
 string pavarde_;
+public:
+    string vardas() const {return vardas_;}
+    string pavarde() const {return pavarde_;}
+    virtual void set_vardas(string vardas) {vardas_ = vardas;}
+    virtual void set_pavarde(string pavarde) {pavarde_ = pavarde;}
+};
+class stud:public zmogus
+{
+private:
 vector <int> nd_;
 int egzaminas_;
 double mediana_;
 double galb_;
 
 public:
-    stud(){};
+stud(){};
 ~stud(){};
 stud(const stud &studis)
     {
@@ -39,13 +48,9 @@ stud operator=(stud other)
         std::swap(mediana_, other.mediana_);
         std::swap(galb_, other.galb_);
     }
-string vardas() const {return vardas_;}
-string pavarde() const {return pavarde_;}
 vector<int> nd() const {return nd_;}
 double mediana() const {return mediana_;}
 double galb() const {return galb_;}
-void set_vardas(string vardas) {vardas_ = vardas;}
-void set_pavarde(string pavarde) {pavarde_ = pavarde;}
 void set_nd(vector<int> nd) {nd_ = nd;}
 void set_egzaminas(int egzaminas) {egzaminas_ = egzaminas;}
 void set_mediana(double mediana) {mediana_ = mediana;}
@@ -69,6 +74,7 @@ friend bool operator==(stud a,stud b)
     {
         return a == b;
     }
+
 };
 
 #endif
